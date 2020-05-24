@@ -1,0 +1,15 @@
+provider "aws" {
+  region = "us-east-1"
+  access_key = "AKIAWSM2YL3IQYYUQK3I"
+  secret_key = "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"
+}
+
+resource "aws_instance" "AWSServer" {
+  ami = "ami-098f16afa9edf40be"
+  instance_type = "t2.micro"
+  key_name = "reddy"
+  security_groups = ["launch-wizard-1"]
+  tags = {
+   Name = "Terrafrom Server"
+  }
+}
